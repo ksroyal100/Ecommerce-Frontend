@@ -5,7 +5,7 @@ const localhost = "http://localhost:8000"
 export const API_BASE_URL = server
 
 
- const api = axios.create({
+ export const api = axios.create({
     baseURL: API_BASE_URL, 
     // headers: {
         //     "Authorization": `Bearer ${jwt}`,
@@ -18,4 +18,3 @@ api.defaults.headers.common['Authorization'] = `Bearer ${jwt}`;
 
 api.defaults.headers.post['Content-Type'] = 'application/json';
 
-export default api
