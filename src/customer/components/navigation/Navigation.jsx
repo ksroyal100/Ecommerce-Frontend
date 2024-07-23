@@ -22,7 +22,7 @@ export default function Navigation() {
   const [anchorE1, setAnchorE1] = useState(null);
   const openUserMenu = Boolean(anchorE1);
   const jwt = localStorage.getItem("jwt")
-  const { auth } = useSelector(store => store)
+  const { auth, cart } = useSelector(store => store)
   const dispatch = useDispatch()
   const location = useLocation()
 
@@ -180,12 +180,12 @@ export default function Navigation() {
 
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <a onClick={handleOpen} href="#" className="-m-2 block p-2 font-medium text-gray-900">
                       Sign in
                     </a>
                   </div>
                   <div className="flow-root">
-                    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                    <a onClick={handleOpen} href="#" className="-m-2 block p-2 font-medium text-gray-900">
                       Create account
                     </a>
                   </div>
@@ -382,12 +382,12 @@ export default function Navigation() {
                 
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
+                {/* <div className="flex lg:ml-6">
                   <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true" />
                   </a>
-                </div>
+                </div> */}
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
@@ -396,9 +396,9 @@ export default function Navigation() {
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{cart.cart?.totalItems }</span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </a> 
                 </div>
               </div>
             </div>

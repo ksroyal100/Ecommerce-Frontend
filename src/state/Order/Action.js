@@ -3,7 +3,7 @@ import { api, API_BASE_URL } from '../../config/apiConfig'
 import dispatch from 'react-redux'
 
 export const createOrder = (reqData) => async (dispatch) => {
-    console.log("req data ", reqData.address);
+  
     try {
       dispatch({ type: CREATE_ORDER_REQUEST });
   
@@ -18,6 +18,7 @@ export const createOrder = (reqData) => async (dispatch) => {
         `${API_BASE_URL}/api/orders/`,
         reqData.address, 
       );
+      console.log(reqData.address)
        
       if (data._id) {
         reqData.navigate({ search: `step=3&order_id=${data._id}` });
@@ -39,12 +40,15 @@ export const createOrder = (reqData) => async (dispatch) => {
     }
   };
 export const getOrderById = (orderId) => async (dispatch) => {
+  // console.log("get order req", orderId)
     dispatch({ type: GET_ORDER_BY_ID_REQUEST })
     try {
         const { data } = await api.get(
             `/api/orders/${orderId}`,
         )
-        console.log("order by id", data)
+      console.log("order by id", data)
+      console.log("order by id", orderId)
+      
         dispatch({
             type: GET_ORDER_BY_ID_SUCCESS,
             payload: data,

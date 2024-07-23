@@ -96,7 +96,7 @@ export default function Product() {
       maxPrice,
       minDiscount: discount || 0,
       sort: sortValue || "price_low",
-      pageNumber: pageNumber - 1,
+      pageNumber: pageNumber,
       // pageSize: 1,
       pageSize: 10,
       stock:stock,

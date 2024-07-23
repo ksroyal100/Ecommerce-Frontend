@@ -4,22 +4,31 @@ import CartItem from '../Cart/CartItem'
 import { Button } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrderById } from '../../../state/Order/Action'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { createPayment } from '../../../state/Payment/Action'
+import {PaymentSuccess } from '../paymentSuccess/PaymentSuccess'
 
   
 const OrderSummary = () => {
   const dispatch = useDispatch()
   const location = useLocation()
-  const {order} = useSelector(store=>store) 
+  const navigate = useNavigate()
+  const { order } = useSelector(store => store)
+  const jwt = localStorage.getItem("jwt");
   const searchParams = new URLSearchParams(location.search)
   const orderId = searchParams.get("order_id")
   useEffect(() => {
     dispatch(getOrderById(orderId))
-  },[orderId])
+  }, [orderId])
+  const handleCheckout = (e) => {
+    e.preventDefault()
+    const paymentData = { orderId,jwt, navigate }
+    dispatch(createPayment(paymentData))
+  }
   return (
     <div>
       <div className='p-5 shadow-lg rounded-s-md border'>
-        <AddressCard />
+      <AddressCard address={order.order?.shippingAddress}/>
       </div>
       <div>
         
@@ -36,12 +45,12 @@ const OrderSummary = () => {
             <div className='space-y-3 px-2 font-semibold'>
               <div className='flex justify-between pt-3 text-black '>
                 <span>Price</span>
-                <span>₹4687</span>
+                  <span>₹{ order.order?.totalPrice}</span>
 
               </div>
               <div className='flex justify-between pt-3 text-black '>
                 <span>Discount</span>
-                <span className='text-green-600'>-₹687</span>
+                <span className='text-green-600'>-₹{ order.order?.totalDiscountedPrice}</span>
 
               </div>
               <div className='flex justify-between pt-3 text-black '>
@@ -51,13 +60,13 @@ const OrderSummary = () => {
               </div>
               <div className='flex justify-between pt-3 text-black '>
                 <span>Total Amount</span> 
-                <span className='text-lg'>₹4000</span>
+                <span className='text-lg'>₹{ order.order?.discount}</span>
 
               </div>
             </div>
             <hr />
             <div className='p-3 flex '>
-                <Button color='primary' variant='contained' className='w-full' >
+                <Button  color='primary' variant='contained' className='w-full' onClick={()=>navigate('/api/payments')} >
                  Checkout
                   </Button>
                   </div>
