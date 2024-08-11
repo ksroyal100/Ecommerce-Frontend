@@ -118,8 +118,7 @@
       },
     ],
     pages: [
-      { name: 'Company', id: '/' },
-      { name: 'Stores', id: '/' },
+      { name: 'Company', id: '/' }
     ],
   }
 

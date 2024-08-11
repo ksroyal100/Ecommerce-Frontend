@@ -363,7 +363,7 @@ export default function Navigation() {
                           "aria-labelledby":"basic-button",
                         }}
                        >
-                        <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
+                        {/* <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem> */}
                         <MenuItem onClick={()=>navigate("/account/order")} >
                           My Orders
                         </MenuItem>

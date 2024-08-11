@@ -73,6 +73,7 @@ const RegisterForm = () => {
               name="password"
               label="Password"
               fullWidth
+              type="password"
               autoComplete='password'
             />
           </Grid>

@@ -7,12 +7,15 @@ import { removeCartItem, updateCartItem } from '../../../state/Cart/Action';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch()
+  const jwt = localStorage.getItem("jwt");
   const handleUpdateCartItem = (num) => {
-    const data = {data:{quantity:item.quantity + num},cartItemId:item?.id}
+    const data = {data:{quantity:item.quantity + num},cartItemId:item?._id,jwt}
     dispatch(updateCartItem(data))
   }
   const handleRemoveCartItem = () => {
-    dispatch(removeCartItem(item.id))
+    const data = { cartItemId: item?._id, jwt };
+
+    dispatch(removeCartItem(data))
   }
   return (
       <div className='p-5 shadow-lg border rounded-md'>

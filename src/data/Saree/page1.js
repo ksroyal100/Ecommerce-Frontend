@@ -1,6 +1,6 @@
 export const sareePage1=[
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/6/t/z/free-sequined-embroidered-saree-granthva-fab-unstitched-original-imaggsq6b4y2adwk.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/6/t/z/free-sequined-embroidered-saree-granthva-fab-unstitched-original-imaggsq6b4y2adwk.jpeg?q=70",
         "title": "PRATHAM BLUE",
         "title2": "Embroidered Bollywood Georgette Saree",
         "color": "Purple",
@@ -9,7 +9,7 @@ export const sareePage1=[
         "disscount": "80% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/3/j/n/free-silver-gulab-banaras-silk-palace-unstitched-original-imagz2zy2uyj6tp5.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/3/j/n/free-silver-gulab-banaras-silk-palace-unstitched-original-imagz2zy2uyj6tp5.jpeg?q=70",
         "title": "Banaras silk palace",
         "title2": "Woven Banarasi Tissue Saree",
         "color": "Pink",
@@ -18,7 +18,7 @@ export const sareePage1=[
         "disscount": "71% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/z/x/e/free-saree-with-georgette-fabric-sada-sobhagyavati-bhav-with-original-imagjnurkkccy8kg.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/z/x/e/free-saree-with-georgette-fabric-sada-sobhagyavati-bhav-with-original-imagjnurkkccy8kg.jpeg?q=70",
         "title": "Qwarty",
         "title2": "Polka Print, Embroidered, Self Design Bandhani\n                          Georgett...",
         "color": "Red",
@@ -27,7 +27,7 @@ export const sareePage1=[
         "disscount": "79% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/v/p/3/free-prathna-om-vastra-fab-unstitched-original-imaghmwuprfjubfn.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/v/p/3/free-prathna-om-vastra-fab-unstitched-original-imaghmwuprfjubfn.jpeg?q=70",
         "title": "Rarebeauty",
         "title2": "Embroidered Bollywood Georgette Saree",
         "color": "Black",
@@ -36,7 +36,7 @@ export const sareePage1=[
         "disscount": "85% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/s/u/t/free-matka-04-tejas-sarees-unstitched-original-imagj69c9yy4pcgh.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/s/u/t/free-matka-04-tejas-sarees-unstitched-original-imagj69c9yy4pcgh.jpeg?q=70",
         "title": "Tejassarees",
         "title2": "Embellished Bandhani Georgette Saree",
         "color": "Yellow",
@@ -45,7 +45,7 @@ export const sareePage1=[
         "disscount": "58% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/5/z/k/free-banarasi-saree-kalapushpi-unstitched-original-imagm5vz25z6fmuj.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/5/z/k/free-banarasi-saree-kalapushpi-unstitched-original-imagm5vz25z6fmuj.jpeg?q=70",
         "title": "Kalapushpi",
         "title2": "Self Design Banarasi Cotton Blend, Pure Silk Saree",
         "color": "Maroon",
@@ -54,7 +54,7 @@ export const sareePage1=[
         "disscount": "82% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/k7c88sw0/sari/j/z/y/free-ladli-krishna-r-fashion-original-imafphxuxmkutnt8.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/k7c88sw0/sari/j/z/y/free-ladli-krishna-r-fashion-original-imafphxuxmkutnt8.jpeg?q=70",
         "title": "Krishna R fashion",
         "title2": "Woven Bollywood Georgette, Cotton Silk Saree",
         "color": "Pink, Beige",
@@ -63,7 +63,7 @@ export const sareePage1=[
         "disscount": "88% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/k4hcjgw0/sari/k/n/g/free-10068-h-shaibo-saree-original-imafndx6y8nqcefx.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/k4hcjgw0/sari/k/n/g/free-10068-h-shaibo-saree-original-imafndx6y8nqcefx.jpeg?q=70",
         "title": "Shaibo saree",
         "title2": "Checkered Bollywood Cotton Silk Saree",
         "color": "Pack of 2, Multicolor",
@@ -72,7 +72,7 @@ export const sareePage1=[
         "disscount": "71% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/t/x/0/free-prathna-om-vastra-fab-unstitched-original-imag773gmebcc9md.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/xif0q/sari/t/x/0/free-prathna-om-vastra-fab-unstitched-original-imag773gmebcc9md.jpeg?q=70",
         "title": "Rarebeauty",
         "title2": "Embroidered Bollywood Georgette Saree",
         "color": "Blue",
@@ -81,7 +81,7 @@ export const sareePage1=[
         "disscount": "85% off"
     },
     {
-        "image": "https://rukminim1.flixcart.com/image/612/612/kzvlua80/sari/7/s/l/free-sds0030-sadika-unstitched-original-imagbsg4na5x3gfn.jpeg?q=70",
+        "imageUrl": "https://rukminim1.flixcart.com/image/612/612/kzvlua80/sari/7/s/l/free-sds0030-sadika-unstitched-original-imagbsg4na5x3gfn.jpeg?q=70",
         "title": "MATRUCHHAYA",
         "title2": "Embroidered, Woven Daily Wear Georgette Saree",
         "color": "Grey",
