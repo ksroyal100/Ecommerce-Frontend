@@ -6,7 +6,7 @@ import { getUser, login } from '../../state/Auth/Action';
 
 const LoginForm = () => {
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   // const jwt = localStorage.getItem("jwt")
   // const {auth} = useSelector(store=>store)
