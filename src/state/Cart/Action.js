@@ -6,7 +6,10 @@ export const getCart = () => async (dispatch) => {
     try {
         const { data } = await api.get(`/api/cart/`)
         dispatch({ type: GET_CART_SUCCESS, payload: data })
+<<<<<<< HEAD
         // console.log("cart  item----> ",data)
+=======
+>>>>>>> 5ce0153 (reinitialize)
 
     } catch (error) {
         dispatch({ type: GET_CART_FAILURE, payload: error.message })
@@ -38,10 +41,22 @@ export const removeCartItem = (reqData) => async (dispatch) => {
 export const updateCartItem = (reqData) => async (dispatch) => {
     dispatch({ type: UPDATE_CART_ITEM_REQUEST })
     try {
+<<<<<<< HEAD
         const { data } = await api.put(`/api/cart_items/${reqData.cartItemId}`, reqData.data)
   console.log("udated cartitem ",data)
         dispatch({type:UPDATE_CART_ITEM_SUCCESS,payload:data})
     } catch (error) {
+=======
+        const { data } = await api.put(`/api/cart_items/${reqData.cartItemId}`, reqData.data,{
+            headers: {
+                Authorization: `Bearer ${reqData.jwt}`
+            }
+        })
+  console.log("udated cartitem ",data)
+        dispatch({type:UPDATE_CART_ITEM_SUCCESS,payload:data})
+    } catch (error) {
+        console.error("Error updating cart item:", error.response?.data || error.message);
+>>>>>>> 5ce0153 (reinitialize)
         dispatch({ type: UPDATE_CART_ITEM_FAILURE, payload: error.message })
     }
 }
