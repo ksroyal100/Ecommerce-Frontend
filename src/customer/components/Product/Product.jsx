@@ -2,7 +2,6 @@ import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
-// import { mens_kurta } from '../../../data/Men/men_kurta'
 import ProductCard from './ProductCard'
 import { filters, singleFilter } from './filterData'
 import FilterListIcon from '@mui/icons-material/FilterList';
@@ -97,7 +96,6 @@ export default function Product() {
       minDiscount: discount || 0,
       sort: sortValue || "price_low",
       pageNumber: pageNumber,
-      // pageSize: 1,
       pageSize: 10,
       stock:stock,
       
