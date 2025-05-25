@@ -26,8 +26,9 @@ const OrderSummary = () => {
 
   const handleCheckout = (e) => {
     e.preventDefault();
-    const paymentData = { orderId, jwt, navigate };
-    dispatch(createPayment(paymentData));
+navigate("/paymentSuccess")
+    // const paymentData = { orderId, jwt, navigate };
+    // dispatch(createPayment(paymentData));
   };
 
   return (

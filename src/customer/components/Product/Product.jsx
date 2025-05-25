@@ -222,15 +222,6 @@ export default function Product() {
 
             <div className="flex items-center">
               <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                    Sort
-                    <ChevronDownIcon
-                      className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
-                      aria-hidden="true"
-                    />
-                  </Menu.Button>
-                </div>
 
                 <Transition
                   as={Fragment}
@@ -264,10 +255,7 @@ export default function Product() {
                 </Transition>
               </Menu>
 
-              <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
-                <span className="sr-only">View grid</span>
-                <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
-              </button>
+             
               <button
                 type="button"
                 className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
@@ -285,16 +273,9 @@ export default function Product() {
             </h2>
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
+
               {/* Filters */}
               <form className="hidden lg:block">
-                {/* <h3 className="sr-only">Categories</h3>
-                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
-                  {subCategories.map((category) => (
-                    <li key={category.name}>
-                      <a href={category.href}>{category.name}</a>
-                    </li>
-                  ))}
-                </ul> */}
 
                 <div className='py-10 flex justify-between items-center'>
                   <h1 className='text-lg opacity-50 font-bold'>Filters</h1>
@@ -316,7 +297,7 @@ export default function Product() {
                               )}
                             </span>
                           </Disclosure.Button>
-                        </h3>
+                        </h3> 
                         <Disclosure.Panel className="pt-6">
                           <div className="space-y-4">
                             {section.options.map((option, optionIdx) => (
@@ -395,18 +376,11 @@ export default function Product() {
               {/* Product grid */}
               <div  className="lg:col-span-4 w-full">
                 <div className='flex flex-wrap justify-center bg-white py-5'>
-                {/* {product.products?.content.map((item,index) => <ProductCard product={item} key={index}/>)} */}
                 {products.products && products.products?.content?.map((item, index) => (
     <ProductCard product={item} key={index} />
 ))}
                 </div>
                 </div>
-            </div>
-          </section>
-          <section className='w-full px-[3.6rem]'>
-            <div className='px-4 py-5 flex justify-center'>
-              <Pagination count={products.products?.totalPages} color='primary' onChange={handlePaginationChange}/>
-
             </div>
           </section>
         </main>

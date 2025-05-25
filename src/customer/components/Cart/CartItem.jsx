@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Button, IconButton } from '@mui/material';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
@@ -9,14 +9,30 @@ const CartItem = ({ item, showButton = true }) => {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem('jwt');
 
+  // ✅ Local state for quantity (optimistic UI)
+  const [quantity, setQuantity] = useState(item.quantity);
+
+  // ✅ Sync if redux updates (e.g., after full cart reload)
+  useEffect(() => {
+    setQuantity(item.quantity);
+  }, [item.quantity]);
+
+  // ✅ Handle quantity change
   const handleUpdateCartItem = (num) => {
+    const newQuantity = quantity + num;
+
+    // 🔒 Prevent quantity from going below 1
+    if (newQuantity < 1) return;
+
+    setQuantity(newQuantity); // ✅ Optimistic UI
+
     const data = {
-      data: { quantity: item.quantity + num },
+      data: { quantity: newQuantity },
       cartItemId: item?._id,
       jwt,
     };
-    console.log("update data", data);
-    dispatch(updateCartItem(data));
+
+    dispatch(updateCartItem(data)); // 🔁 Sync with backend
   };
 
   const handleRemoveCartItem = () => {
@@ -55,11 +71,11 @@ const CartItem = ({ item, showButton = true }) => {
             <IconButton
               aria-label="Decrease quantity"
               onClick={() => handleUpdateCartItem(-1)}
-              disabled={item?.quantity <= 1}
+              disabled={quantity <= 1}
             >
               <RemoveCircleOutlineIcon />
             </IconButton>
-            <span className="py-1 px-7 border rounded-sm">{item?.quantity}</span>
+            <span className="py-1 px-7 border rounded-sm">{quantity}</span>
             <IconButton
               aria-label="Increase quantity"
               onClick={() => handleUpdateCartItem(1)}
@@ -69,7 +85,10 @@ const CartItem = ({ item, showButton = true }) => {
             </IconButton>
           </div>
           <div>
-            <Button onClick={handleRemoveCartItem} sx={{ color: 'rgb(145, 85, 253)' }}>
+            <Button
+              onClick={handleRemoveCartItem}
+              sx={{ color: 'rgb(145, 85, 253)' }}
+            >
               Remove
             </Button>
           </div>

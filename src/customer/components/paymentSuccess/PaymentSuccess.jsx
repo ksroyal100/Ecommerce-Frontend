@@ -9,7 +9,7 @@ const PaymentSuccess = () => {
     <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full">
       <h2 className="text-xl font-semibold mb-4">Select Payment Method</h2>
       <div className="space-y-4">
-        <button className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"  onClick={()=>navigate('/api/payments/done')}> 
+        <button className="w-full py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600"  onClick={()=>navigate('/paymentSuccessDone')}> 
           Cash On Delivery
         </button>
         <button className="w-full py-2 px-4 bg-green-500 text-white line-through rounded hover:bg-green-600">

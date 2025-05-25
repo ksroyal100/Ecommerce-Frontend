@@ -27,8 +27,8 @@ const DeliveryAddressForm = () => {
             streetAddress:data.get("address"),
             city:data.get("city"),
             state:data.get("state"),
-            zip:data.get("zip"),
-            phone:data.get("phone"),
+            zipcode:data.get("zipcode"),
+            mobile:data.get("mobile"),
             
         }
         const orderData = { address,jwt, navigate }
@@ -66,10 +66,10 @@ const DeliveryAddressForm = () => {
                                   <TextField required id='state' name='state' label="State/Province/Region" fullWidth autoComplete='given-name' />
                                   </Grid>
                               <Grid item xs={12} sm={6}>
-                                  <TextField required id='zip' name='zip' label="Zip Code" fullWidth autoComplete='shipping postal-code' />
+                                  <TextField required id='zipcode' name='zipcode' label="Zip Code" fullWidth autoComplete='shipping postal-code' />
                                   </Grid>
                               <Grid item xs={12} sm={6}>
-                              <TextField required id='phone' name='phone' label="Phone / Mobile No." fullWidth autoComplete='given-name' />
+                              <TextField required id='mobile' name='mobile' label="Phone / Mobile No." fullWidth autoComplete='given-name' />
                              
                               </Grid>
                               <Grid item xs={12} sm={6}>

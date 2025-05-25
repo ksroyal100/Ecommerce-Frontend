@@ -72,9 +72,9 @@ const Footer = () => {
               </Grid>
 
           </Grid>
-          <Grid className='bg-black text-white mt-20' item xs={12}>
+          <Grid className='bg-black text-white mt-20 mb-10' item xs={12}>
               <Typography variant='body2' component="p" align='center'>
-                  &copy; 2023 My Company. All Rights Reserved.
+                  &copy; 2025 My Company. All Rights Reserved.
               </Typography>
           </Grid>
     </div>

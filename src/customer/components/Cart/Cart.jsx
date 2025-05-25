@@ -21,7 +21,7 @@ const Cart = () => {
     <div>
       <div className='pt-3 lg:grid grid-cols-3 lg:px-16 relative'>
         <div className='col-span-2'>
-          {cart.cart?.cartItems.map((item) => <CartItem item={item} />)}
+          {cart.cart?.cartItems.map((item) => <CartItem key={item._id} item={item} />)}
         </div>
 
       <div className='px-5 sticky  top-0 h-[100vh] mt-5 lg:mt-0'>
@@ -36,7 +36,7 @@ const Cart = () => {
               </div>
               <div className='flex justify-between pt-3 text-black '>
                 <span>Discount</span>
-                <span className='text-green-600'>-₹{cart.cart?.discounts }</span>
+                <span className='text-green-600'>-₹{cart.cart?.totalDiscountedPrice }</span>
 
               </div>
               <div className='flex justify-between pt-3 text-black '>
@@ -46,16 +46,23 @@ const Cart = () => {
               </div>
               <div className='flex justify-between pt-3 text-black '>
                 <span>Total Amount</span>
-                <span className='text-lg'>{cart.cart?.totalDiscountedPrice
+                <span className='text-lg'>{cart.cart?.discounts
 }</span>
 
               </div>
             </div>
             <hr />
             <div className='p-3 flex '>
-                <Button onClick={handleCheckout} color='primary' variant='contained' className='w-full' >
-                 Checkout
-                  </Button>
+                <Button
+  onClick={handleCheckout}
+  color='primary'
+  variant='contained'
+  className='w-full'
+  disabled={!cart.cart?.cartItems || cart.cart.cartItems.length === 0}
+>
+  Checkout
+</Button>
+
                   </div>
           </div>
       </div>
