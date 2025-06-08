@@ -43,11 +43,11 @@ const Cart = () => {
                 <span>Delivery Charges</span>
                 <span className='text-green-600'>Free</span>
 
-              </div>
+              </div> 
               <div className='flex justify-between pt-3 text-black '>
                 <span>Total Amount</span>
                 <span className='text-lg'>{cart.cart?.discounts
-}</span>
+}</span>  
 
               </div>
             </div>

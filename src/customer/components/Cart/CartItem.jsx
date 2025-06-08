@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Button, IconButton } from '@mui/material';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { removeCartItem, updateCartItem } from '../../../state/Cart/Action';
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Button, IconButton } from "@mui/material";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { removeCartItem, updateCartItem } from "../../../state/Cart/Action";
 
 const CartItem = ({ item, showButton = true }) => {
   const dispatch = useDispatch();
-  const jwt = localStorage.getItem('jwt');
+  const jwt = localStorage.getItem("jwt");
 
   // ✅ Local state for quantity (optimistic UI)
   const [quantity, setQuantity] = useState(item.quantity);
@@ -59,7 +59,7 @@ const CartItem = ({ item, showButton = true }) => {
             <p className="font-semibold text-lg">₹{item?.discountedPrice}</p>
             <p className="opacity-50 line-through">₹{item?.price}</p>
             <p className="text-green-600 font-semibold">
-              {item?.discountedPersent}% Off
+              {item?.product?.discountPersent}% Off
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ const CartItem = ({ item, showButton = true }) => {
             <IconButton
               aria-label="Increase quantity"
               onClick={() => handleUpdateCartItem(1)}
-              sx={{ color: 'rgb(145, 85, 253)' }}
+              sx={{ color: "rgb(145, 85, 253)" }}
             >
               <AddCircleOutlineIcon />
             </IconButton>
@@ -87,7 +87,7 @@ const CartItem = ({ item, showButton = true }) => {
           <div>
             <Button
               onClick={handleRemoveCartItem}
-              sx={{ color: 'rgb(145, 85, 253)' }}
+              sx={{ color: "rgb(145, 85, 253)" }}
             >
               Remove
             </Button>

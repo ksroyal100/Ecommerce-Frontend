@@ -1,15 +1,14 @@
-import { Button, Grid, TextField } from '@mui/material'
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
-import { getUser, register } from '../../state/Auth/Action';
+import { Button, Grid, TextField } from "@mui/material";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser, register } from "../../state/Auth/Action";
 
 const RegisterForm = () => {
-
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // const jwt = localStorage.getItem("jwt"
-  const {auth} = useSelector(store=>store)
+  const { auth } = useSelector((store) => store);
 
   // useEffect(() => {
   //   if (jwt) {
@@ -18,81 +17,93 @@ const RegisterForm = () => {
   // },[jwt,auth.jwt])
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const data = new FormData(e.currentTarget)
+    const data = new FormData(e.currentTarget);
 
     const userData = {
       firstName: data.get("firstname"),
-      lastName:data.get("lastname"),
-      email:data.get("email"),
-      password:data.get("password"),
-      
-    }
+      lastName: data.get("lastname"),
+      email: data.get("email"),
+      password: data.get("password"),
+    };
     dispatch(register(userData));
-  }
+  };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <TextField 
+            <TextField
               required
-              id='firstname'
+              id="firstname"
               name="firstname"
               label="First Name"
               fullWidth
-              autoComplete='given-name'
+              autoComplete="given-name"
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField 
+            <TextField
               required
-              id='lastname'
+              id="lastname"
               name="lastname"
               label="Last Name"
               fullWidth
-              autoComplete='given-name'
+              autoComplete="given-name"
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField 
+            <TextField
               required
-              id='email'
+              id="email"
               name="email"
               label="Email"
               fullWidth
-              autoComplete='email'
+              autoComplete="email"
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField 
+            <TextField
               required
-              id='password'
+              id="password"
               name="password"
               label="Password"
               fullWidth
               type="password"
-              autoComplete='password'
+              autoComplete="password"
             />
           </Grid>
           <Grid item xs={12}>
-            <Button onC color='primary' variant='contained' className='w-full' size='large' type='submit' sx={{padding:".8rem 0"}}>
+            <Button
+              onC
+              color="primary"
+              variant="contained"
+              className="w-full"
+              size="large"
+              type="submit"
+              sx={{ padding: ".8rem 0" }}
+            >
               Register
-           </Button>
+            </Button>
           </Grid>
         </Grid>
-
       </form>
       <div>
-        <div className='flex py-3 justify-center'>
+        <div className="flex py-3 justify-center">
           <p>if you already have account ?</p>
-          <Button onClick={() => navigate('/login')} className='ml-5' size='small'>Login</Button>
+          <Button
+            onClick={() => navigate("/login")}
+            className="ml-5"
+            size="small"
+          >
+            Login
+          </Button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;

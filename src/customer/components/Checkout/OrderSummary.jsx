@@ -32,7 +32,7 @@ navigate("/paymentSuccess")
   };
 
   return (
-    <div className="p-5">
+    <div className="w-full ">
       {/* Shipping Address */}
       <div className="shadow-lg rounded-md border p-5 mb-5">
         <AddressCard address={order.order?.shippingAddress} />
