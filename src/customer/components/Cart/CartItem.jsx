@@ -9,22 +9,22 @@ const CartItem = ({ item, showButton = true }) => {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt");
 
-  // ✅ Local state for quantity (optimistic UI)
+  // Local state for quantity (optimistic UI)
   const [quantity, setQuantity] = useState(item.quantity);
 
-  // ✅ Sync if redux updates (e.g., after full cart reload)
+  // Sync if redux updates (e.g., after full cart reload)
   useEffect(() => {
     setQuantity(item.quantity);
   }, [item.quantity]);
 
-  // ✅ Handle quantity change
+  // Handle quantity change
   const handleUpdateCartItem = (num) => {
     const newQuantity = quantity + num;
 
     // 🔒 Prevent quantity from going below 1
     if (newQuantity < 1) return;
 
-    setQuantity(newQuantity); // ✅ Optimistic UI
+    setQuantity(newQuantity); // Optimistic UI
 
     const data = {
       data: { quantity: newQuantity },
@@ -32,7 +32,7 @@ const CartItem = ({ item, showButton = true }) => {
       jwt,
     };
 
-    dispatch(updateCartItem(data)); // 🔁 Sync with backend
+    dispatch(updateCartItem(data)); // Sync with backend
   };
 
   const handleRemoveCartItem = () => {
@@ -54,6 +54,7 @@ const CartItem = ({ item, showButton = true }) => {
         <div className="ml-5 space-y-1">
           <p className="font-medium text-lg">{item?.product?.title}</p>
           <p className="opacity-70">Size: {item?.size}</p>
+          <p className="opacity-70">Quantity: {item?.quantity} pcs</p>
           <p className="opacity-70 mt-2">Seller: {item?.product?.brand}</p>
           <div className="flex space-x-5 items-center text-grey-900 mt-4">
             <p className="font-semibold text-lg">₹{item?.discountedPrice}</p>

@@ -31,78 +31,76 @@ const RegisterForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="firstname"
-              name="firstname"
-              label="First Name"
-              fullWidth
-              autoComplete="given-name"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              id="lastname"
-              name="lastname"
-              label="Last Name"
-              fullWidth
-              autoComplete="given-name"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              required
-              id="email"
-              name="email"
-              label="Email"
-              fullWidth
-              autoComplete="email"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              required
-              id="password"
-              name="password"
-              label="Password"
-              fullWidth
-              type="password"
-              autoComplete="password"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              onC
-              color="primary"
-              variant="contained"
-              className="w-full"
-              size="large"
-              type="submit"
-              sx={{ padding: ".8rem 0" }}
-            >
-              Register
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-      <div>
-        <div className="flex py-3 justify-center">
-          <p>if you already have account ?</p>
-          <Button
-            onClick={() => navigate("/login")}
-            className="ml-5"
-            size="small"
-          >
-            Login
-          </Button>
-        </div>
-      </div>
+  <div className="px-8 sm:px-6 md:px-10 lg:px-5 py-4">
+  <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <TextField
+        required
+        id="firstname"
+        name="firstname"
+        label="First Name"
+        fullWidth
+        autoComplete="given-name"
+      />
+      <TextField
+        required
+        id="lastname"
+        name="lastname"
+        label="Last Name"
+        fullWidth
+        autoComplete="given-name"
+      />
     </div>
+
+    <div className="w-full">
+      <TextField
+        required
+        id="email"
+        name="email"
+        label="Email"
+        fullWidth
+        autoComplete="email"
+      />
+    </div>
+
+    <div className="w-full">
+      <TextField
+        required
+        id="password"
+        name="password"
+        label="Password"
+        fullWidth
+        type="password"
+        autoComplete="password"
+      />
+    </div>
+
+    <div className="w-full">
+      <Button
+        color="primary"
+        variant="contained"
+        className="w-full"
+        size="large"
+        type="submit"
+        sx={{ padding: '.8rem 0' }}
+      >
+        Register
+      </Button>
+    </div>
+  </form>
+
+  <div className="flex flex-col sm:flex-row items-center justify-center pt-6 gap-2">
+    <p>Already have an account?</p>
+    <Button
+      onClick={() => navigate('/login')}
+      size="small"
+      className="ml-0 sm:ml-3"
+    >
+      Login
+    </Button>
+  </div>
+</div>
+
   );
 };
 

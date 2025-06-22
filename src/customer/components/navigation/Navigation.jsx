@@ -215,6 +215,10 @@ export default function Navigation() {
                   ))}
                 </div>
 
+<hr/>
+<h2 className="m-4 " onClick={()=>{navigate("/account/order"); setOpen(false)}}>Orders</h2>
+<hr/>
+
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   {auth.user?.firstName ? (
                     <div className="flow-root">
@@ -448,9 +452,9 @@ export default function Navigation() {
                         }}
                       >
                         {/* <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem> */}
-                        {/* <MenuItem onClick={()=>navigate("/account/order")} >
+                        <MenuItem onClick={()=>navigate("/account/order")} >
                           My Orders
-                        </MenuItem> */}
+                        </MenuItem>
                         <MenuItem onClick={handleLogout}>
                           <span className="text-red-500">Logout</span>
                         </MenuItem>

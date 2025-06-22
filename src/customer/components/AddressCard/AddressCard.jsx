@@ -4,10 +4,10 @@ const AddressCard = ({address}) => {
   return (
       <div>
          <div className="space-y-3">
-        <p className="font-semibold">{`${address?.firstName} ${address?.lastName}`}</p>
+        <p className="font-semibold">{`${address?.firstName.charAt(0).toUpperCase() +address?.firstName.slice(1)} ${address?.lastName}`}</p>
 
         <p>
-          {`${address?.streetAddress} ${address?.city} ${address?.state} ${address?.zipcode}`}
+          {`${address?.streetAddress.charAt(0).toUpperCase() +address?.streetAddress.slice(1)} ${address?.city} ${address?.state} ${address?.zipcode}`} 
         </p>
 
         <div className="space-y-1">

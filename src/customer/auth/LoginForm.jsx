@@ -33,45 +33,57 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <TextField 
-              required
-              id='email'
-              name="email"
-              label="Email"
-              fullWidth
-              autoComplete='email'
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField 
-              required
-              id='password'
-              name="password"
-              type="password"
-              label="Password"
-              fullWidth
-              autoComplete='password'
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <Button color='primary' variant='contained' className='w-full' size='large' type='submit' sx={{padding:".8rem 0"}}>
-              Log in
-           </Button>
-          </Grid>
-        </Grid>
-
-      </form>
-      <div>
-      <div className='flex py-3 justify-center'>
-          <p>create new account</p>
-          <Button onClick={() => navigate('/register')} className='ml-5' size='small'>Register</Button>
-        </div>
-      </div>
+ <div className="px-6 sm:px-6 md:px-10 lg:px-5 py-6">
+  <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="w-full">
+      <TextField
+        required
+        id="email"
+        name="email"
+        label="Email"
+        fullWidth
+        autoComplete="email"
+      />
     </div>
+
+    <div className="w-full">
+      <TextField
+        required
+        id="password"
+        name="password"
+        type="password"
+        label="Password"
+        fullWidth
+        autoComplete="current-password"
+      />
+    </div>
+
+    <div className="w-full">
+      <Button
+        color="primary"
+        variant="contained"
+        className="w-full"
+        size="large"
+        type="submit"
+        sx={{ padding: '.8rem 0' }}
+      >
+        Log in
+      </Button>
+    </div>
+  </form>
+
+  <div className="flex flex-col sm:flex-row items-center justify-center pt-6 gap-2">
+    <p>Don't have an account?</p>
+    <Button
+      onClick={() => navigate('/register')}
+      className="ml-0 sm:ml-3"
+      size="small"
+    >
+      Register
+    </Button>
+  </div>
+</div>
+
   )
 }
 

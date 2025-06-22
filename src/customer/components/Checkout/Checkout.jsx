@@ -30,48 +30,31 @@ export default function Checkout() {
 
  
   return (
-    <div className='flex px-10 pt-6 lg:px-20'> 
-    
+    <div className="flex flex-col lg:flex-row px-4 sm:px-6 md:px-10 lg:px-20 pt-4 sm:pt-6 w-full">
+  <div className="w-full">
     <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={step}>
-        {steps.map((label, index) => {
-          const stepProps = {};
-          const labelProps = {};
-          
-          return (
-            <Step key={label} {...stepProps}>
-              <StepLabel {...labelProps}>{label}</StepLabel>
-            </Step>
-          );
-        })}
+      <Stepper activeStep={step} alternativeLabel>
+        {steps.map((label, index) => (
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
+        ))}
       </Stepper>
+
       {activeStep === steps.length ? (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>
-            All steps completed - you&apos;re finished
-          </Typography>
-         
-        </React.Fragment>
+        <Typography sx={{ mt: 2, mb: 1 }}>
+          All steps completed - you&apos;re finished
+        </Typography>
       ) : (
-        <React.Fragment>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-            <Button
-              color="inherit"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
-              Back
-            </Button>
-           
-              </Box>
-              <div className='mt-10'>
-                {step== 2 ? <DeliveryAddressForm />: <OrderSummary />}
-              </div>
-        </React.Fragment>
+        <>
+          <div className="mt-10">
+            {step == 2 ? <DeliveryAddressForm /> : <OrderSummary />}
+          </div>
+        </>
       )}
-      </Box>
-      
-    </div>
+    </Box>
+  </div>
+</div>
+
   );
 }
