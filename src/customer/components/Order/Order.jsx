@@ -6,7 +6,8 @@ import { getAllOrders } from '../../../state/Order/Action';
 
 const Order = () => {
   const dispatch = useDispatch();
-  const { orders, loading, error } = useSelector((state) => state.order);
+const { orders = [], loading, error } = useSelector((state) => state.order || {});
+
 
   const orderStatus = [
     { label: "On The Way", value: "on_the_way" },
@@ -18,7 +19,6 @@ const Order = () => {
   useEffect(() => {
     dispatch(getAllOrders());
   }, []);
-   console.log("orders", orders);
   return (
     <div className='px:5 lg:px-20'>
       <Grid container sx={{ justifyContent: "space-between" }}>

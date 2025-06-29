@@ -1,29 +1,40 @@
-import { Avatar, Box, Grid, Rating } from '@mui/material'
-import React from 'react'
+import { Avatar, Box, Rating } from '@mui/material';
+import React from 'react';
 
 const ProductReviewCard = () => {
   return (
-      <div>
-          <Grid container spacing={2} gap={3}>
-              <Grid item xs={2}>
-                  <Box>
-                      <Avatar className='text-white ' sx={{ width: 56,height:56,bgcolor:"#9155fd"}}>R</Avatar>
-                  </Box>
-              </Grid>
-              <Grid className='flex flex-col mr-6' item xs={9} >
-                  <div className='space-y-2'>
-                      <div>
-                          <p className='font-semibold text-lg'>Ram</p>
-                          <p className='opacity-70'>April 5,2024</p>
-                      </div>
-                  </div>
+    <div className="p-4 border rounded-lg shadow-sm bg-white">
+      <div className="flex flex-col sm:flex-row gap-4">
+        {/* Avatar */}
+        <div className="flex-shrink-0">
+          <Box>
+            <Avatar
+              sx={{ width: 56, height: 56, bgcolor: "#9155fd" }}
+              className="text-white"
+            >
+              R
+            </Avatar>
+          </Box>
+        </div>
 
-                  <Rating value={4.5} readOnly precision={.5} name='half-rating' />
-                  <p>Nice product , ilove this shirt </p>
-              </Grid>
-          </Grid>
+        {/* Content */}
+        <div className="flex flex-col">
+          <div className="space-y-1">
+            <p className="font-semibold text-lg">Ram</p>
+            <p className="text-gray-500 text-sm">April 5, 2024</p>
+          </div>
+
+          <div className="mt-2">
+            <Rating value={4.5} readOnly precision={0.5} name="half-rating" />
+          </div>
+
+          <p className="mt-2 text-sm text-gray-700">
+            Nice product, I love this shirt.
+          </p>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductReviewCard
+export default ProductReviewCard;

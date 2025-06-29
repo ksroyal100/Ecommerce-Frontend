@@ -15,7 +15,7 @@ const OrderCart = ({ order }) => {
           container
           spacing={2}
           sx={{ justifyContent: 'space-between' }}
-          key={item._id}
+          key={index}
         >
           <Grid item xs={6}>
             <div className="flex cursor-pointer">

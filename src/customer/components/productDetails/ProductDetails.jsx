@@ -354,87 +354,46 @@ export default function ProductDetails() {
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
-                  {[1, 1, 1, 1].map(() => (
+                  {[1, 1].map(() => (
                     <ProductReviewCard />
                   ))}
                 </div>
               </Grid>
 
-              <Grid item xs={5}>
-                <h1 className="flex text-xl font-semibold pb-1">
-                  Product Ratings
-                </h1>
-                <div className="flex mt-2">
+              <Grid item xs={12} md={5}>
+                <h1 className="text-xl font-semibold pb-1">Product Ratings</h1>
+
+                <div className="flex items-center gap-2 mt-2">
                   <Rating value={4.6} precision={0.5} readOnly />
-                  <p>54890 Ratings</p>
+                  <p className="text-sm text-gray-600">54890 Ratings</p>
                 </div>
 
-                <Box className="mt-5 space-y-3">
-                  <Grid container alignItems="center" gap={2}>
-                    <Grid item xs={2}>
-                      <p>Excellent</p>
+                <Box className="mt-5 space-y-4">
+                  {[
+                    { label: "Excellent", value: 40, color: "success" },
+                    { label: "Very Good", value: 35, color: "secondary" },
+                    { label: "Good", value: 30, color: "primary" },
+                    { label: "Moderate", value: 20, color: "warning" },
+                    { label: "Poor", value: 15, color: "error" },
+                  ].map((item, index) => (
+                    <Grid container alignItems="center" key={index}>
+                      <Grid item xs={4} sm={3}>
+                        <p className="text-sm">{item.label}</p>
+                      </Grid>
+                      <Grid item xs={8} sm={9}>
+                        <LinearProgress
+                          sx={{
+                            bgcolor: "#d0d0d0",
+                            borderRadius: 4,
+                            height: 7,
+                          }}
+                          variant="determinate"
+                          value={item.value}
+                          color={item.color}
+                        />
+                      </Grid>
                     </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={40}
-                        color="success"
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid container alignItems="center" gap={2}>
-                    <Grid item xs={2}>
-                      <p>Very Good </p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={35}
-                        color="secondary"
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid container alignItems="center" gap={2}>
-                    <Grid item xs={2}>
-                      <p>Good</p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={30}
-                        color="primary"
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid container alignItems="center" gap={2}>
-                    <Grid item xs={2}>
-                      <p>Moderate</p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={20}
-                        color="warning"
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid container alignItems="center" gap={2}>
-                    <Grid item xs={2}>
-                      <p>Poor</p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={15}
-                        color="error"
-                      />
-                    </Grid>
-                  </Grid>
+                  ))}
                 </Box>
               </Grid>
             </Grid>
@@ -442,11 +401,12 @@ export default function ProductDetails() {
         </section>
 
         {/* Similar Products  */}
-        <section className="pt-10">
+        <section className="pt-10 px-4">
           <h1 className="py-5 text-xl font-bold">Similar Products</h1>
-          <div className="flex flex-wrap space-y-5 justify-center">
-            {mens_kurta.map((item) => (
-              <HomeSectionCard product={item} />
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {mens_kurta.map((item, index) => (
+              <HomeSectionCard product={item} key={index} />
             ))}
           </div>
         </section>

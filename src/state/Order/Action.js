@@ -40,14 +40,11 @@ export const createOrder = (reqData) => async (dispatch) => {
     }
   };
 export const getOrderById = (orderId) => async (dispatch) => {
-  // console.log("get order req", orderId)
     dispatch({ type: GET_ORDER_BY_ID_REQUEST })
     try {
         const { data } = await api.get(
             `/api/orders/${orderId}`,
         )
-      console.log("order by id", data)
-      console.log("order by id", orderId)
       
         dispatch({
             type: GET_ORDER_BY_ID_SUCCESS,
@@ -67,7 +64,6 @@ export const getAllOrders = () => async (dispatch) => {
 
   try {
     const { data } = await api.get(`${API_BASE_URL}/api/orders/user`); 
-    console.log("Fetched orders", data);
     dispatch({
       type: GET_ALL_ORDERS_SUCCESS,
       payload: data,
