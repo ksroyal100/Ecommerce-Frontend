@@ -79,6 +79,7 @@ export default function ProductDetails() {
   };
 
   useEffect(() => {
+window.scrollTo(0, 0);
     const data = { productId: params.productId };
     dispatch(findProductsById(data));
   }, [params.productId]);
@@ -354,8 +355,8 @@ export default function ProductDetails() {
             <Grid container spacing={7}>
               <Grid item xs={7}>
                 <div className="space-y-5">
-                  {[1, 1].map(() => (
-                    <ProductReviewCard />
+                  {[1, 1].map((_,index) => (
+                    <ProductReviewCard key={index}/>
                   ))}
                 </div>
               </Grid>

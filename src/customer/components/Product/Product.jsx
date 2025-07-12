@@ -429,8 +429,8 @@ export default function Product() {
               </form>
 
               {/* Product grid */}
-              <div className="lg:col-span-4 w-full">
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 p-2 bg-white overflow-hidden">
+              <div className="lg:col-span-4 w-full m-0 p-0">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-px bg-white overflow-hidden m-0 p-0">
                   {products.products?.content?.map((item, index) => (
                     <div key={index} className="w-full">
                       <ProductCard product={item} />
