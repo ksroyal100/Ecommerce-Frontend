@@ -8,7 +8,7 @@ A modern, responsive, and highly interactive e-commerce frontend designed to pro
 
 ## 🏅 Project Highlights
 
-- **Professional-Grade UI:** Crafted with React (assumed), Tailwind CSS, and JavaScript for a visually striking and user-friendly shopping experience
+- **Professional-Grade UI:** Crafted with React, Tailwind CSS, and JavaScript for a visually striking and user-friendly shopping experience
 - **Full E-Commerce Flow:** Product catalog, search, filter, cart, authentication, and checkout—all included
 - **Mobile-First Responsiveness:** Polished layout and controls on any device
 - **Scalable Codebase:** Modular folder structure and best practices for real-world extensibility
@@ -18,8 +18,8 @@ A modern, responsive, and highly interactive e-commerce frontend designed to pro
 
 ## 💻 Tech Stack
 
-- **Framework:** React (assumed)
-- **Styling:** Tailwind CSS, HTML
+- **Framework:** React
+- **Styling:** Tailwind CSS, HTML, Material UI
 - **Language:** JavaScript
 - **Deployment:** Vercel
 - **Project Tools:** npm, package.json
