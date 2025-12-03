@@ -2,7 +2,7 @@ import axios from  'axios'
 
 const server = "https://ecommerce-backend-79pv.onrender.com"
 const localhost = "http://localhost:8000"
-export const API_BASE_URL = localhost || server
+export const API_BASE_URL = server
 
 
  export const api = axios.create({
